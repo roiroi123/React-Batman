@@ -1,8 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import CreateCard,{MoviesList} from './components/movies'
- const moviesData:any =[
+[
   {
     "Title": "Batman Begins",
     "Year": "2005",
@@ -84,17 +80,3 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 4
   }
 ]
-function App() {
-
-  return <div >
-    <MoviesList movies = {moviesData}/>
-
-  </div> 
-
-
-
-
-}
-
-
-export default App;
