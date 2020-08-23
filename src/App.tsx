@@ -1,9 +1,13 @@
-import React from 'react';
+import React,{ useState } from "react"
 import logo from './logo.svg';
 import './App.css';
-import CreateCard,{MoviesList} from './components/movies'
+import CreateCard from './components/movies'
+import MoviesList from './components/movies-list'
+
+
  const moviesData:any =[
   {
+    "id":"1",
     "Title": "Batman Begins",
     "Year": "2005",
     "imdbID": "tt0372784",
@@ -12,6 +16,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 4
   },
   {
+    "id":"2",
     "Title": "Batman v Superman: Dawn of Justice",
     "Year": "2016",
     "imdbID": "tt2975590",
@@ -20,6 +25,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 1
   },
   {
+    "id":"3",
     "Title": "Batman",
     "Year": "1989",
     "imdbID": "tt0096895",
@@ -28,6 +34,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 5
   },
   {
+    "id":"4",
     "Title": "Batman Returns",
     "Year": "1992",
     "imdbID": "tt0103776",
@@ -36,6 +43,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 4
   },
   {
+    "id":"5",
     "Title": "Batman Forever",
     "Year": "1995",
     "imdbID": "tt0112462",
@@ -44,6 +52,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 4
   },
   {
+    "id":"6",
     "Title": "Batman & Robin",
     "Year": "1997",
     "imdbID": "tt0118688",
@@ -52,6 +61,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 4
   },
   {
+    "id":"7",
     "Title": "The Lego Batman Movie",
     "Year": "2017",
     "imdbID": "tt4116284",
@@ -60,6 +70,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 4
   },
   {
+    "id":"8",
     "Title": "Batman: The Animated Series",
     "Year": "1992–1995",
     "imdbID": "tt0103359",
@@ -68,6 +79,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 4
   },
   {
+    "id":"9",
     "Title": "Batman: Under the Red Hood",
     "Year": "2010",
     "imdbID": "tt1569923",
@@ -76,6 +88,7 @@ import CreateCard,{MoviesList} from './components/movies'
     "rank": 5
   },
   {
+    "id":"10",
     "Title": "Batman: The Dark Knight Returns, Part 1",
     "Year": "2012",
     "imdbID": "tt2313197",
@@ -85,9 +98,10 @@ import CreateCard,{MoviesList} from './components/movies'
   }
 ]
 function App() {
+  const [getMoviesData, SetMoviesData] = useState(moviesData)
 
   return <div >
-    <MoviesList movies = {moviesData}/>
+    <MoviesList movies = {getMoviesData}/>
 
   </div> 
 
